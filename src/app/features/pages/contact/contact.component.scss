@@ -1,6 +1,6 @@
 // Styles loaded globally
 
-.vol-highlight { color: #c0392b; }
+.vol-highlight { color: #7c2522; }
 
 // Badges
 .vol-badges {
@@ -33,7 +33,7 @@
 }
 
 .vol-card-header {
-  background: #c0392b;
+  background: #7c2522;
   padding: 28px 32px 24px;
 
   @media (max-width: 576px) {
@@ -106,7 +106,7 @@
   &::placeholder { color: #aaa; }
 
   &:focus {
-    border-color: #c0392b;
+    border-color: #7c2522;
     box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
     background: #fff;
   }
@@ -139,7 +139,7 @@
   overflow: visible;
 
   &:focus {
-    border-color: #c0392b;
+    border-color: #7c2522;
     box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
     background: #fff;
   }
@@ -155,7 +155,7 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #c0392b;
+  color: #7c2522;
   font-size: 11px;
   pointer-events: none;
 }
@@ -182,7 +182,7 @@
     width: 17px;
     height: 17px;
     min-width: 17px;
-    accent-color: #c0392b;
+    accent-color: #7c2522;
     cursor: pointer;
     margin-top: 2px;
   }
@@ -197,7 +197,7 @@
   display: block;
   width: 100%;
   padding: 14px 24px;
-  background: #c0392b;
+  background: #7c2522;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -251,6 +251,6 @@
 .vol-success-lema {
   font-size: 16px;
   font-weight: 700;
-  color: #c0392b;
+  color: #7c2522;
   margin-bottom: 0;
 }

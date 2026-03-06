@@ -6,6 +6,11 @@
   width: auto;
 }
 
+// Sticky header — sobreescribe el color azul del template original
+.po-header-area.stiky.scroll-header {
+  background-color: #7c2522 !important;
+}
+
 // Logo mobile header y sidebar
 .mobile-logo img,
 .logo-m img {

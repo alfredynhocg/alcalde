@@ -1,11 +1,11 @@
 /* =============================================
    DAMASO NINAJA - Colores de marca
-   Rojo:    #CC0000
+   Rojo:    #7c2522
    Dorado:  #FFB800
    ============================================= */
 
 :root {
-  --brand-red:    #CC0000;
+  --brand-red:    #7c2522;
   --brand-gold:   #FFB800;
   --brand-dark:   #1a1a1a;
 }
@@ -41,7 +41,7 @@ section.breadcrumb-bg,
 
 /* Overlay Plan de Gobierno — semitransparente para que el texto sea legible */
 .po-camping-bg::after {
-  background: rgba(204, 0, 0, 0.93) !important;
+  background: rgba(124, 37, 34, 0.93) !important;
 }
 
 /* El contenido dentro de po-camping-bg debe estar por encima del overlay ::after */
@@ -110,7 +110,7 @@ section.breadcrumb-bg,
 
 /* ── Bordes ── */
 .po-border-top-2 {
-  border-color: rgba(204, 0, 0, 0.3) !important;
+  border-color: rgba(124, 37, 34, 0.3) !important;
 }
 
 /* ── Borde lateral quote ── */

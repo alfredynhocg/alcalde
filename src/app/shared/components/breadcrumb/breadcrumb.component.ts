@@ -7,15 +7,6 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <section class="breadcrumb-bg">
-      <div class="po-breadcrumb-over-shape">
-        <img src="assets/img/icon/breadcrumb-ovr-shape.svg" alt="">
-      </div>
-      <div class="po-plus-shape absolute">
-        <img src="assets/img/icon/po-plus1.1.svg" alt="">
-      </div>
-      <div class="po-dot-shape absolute">
-        <img src="assets/img/icon/po-dot-shape.svg" alt="">
-      </div>
       <div class="container">
         <div class="row align-items-center">
           <div class="col-xl-6">

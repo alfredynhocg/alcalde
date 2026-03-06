@@ -18,9 +18,9 @@ export class HeaderComponent implements AfterViewInit {
     // Sticky header on scroll
     $(window).on('scroll', function () {
       if ($(window).scrollTop() > 100) {
-        $('.stiky').addClass('sticky-menu');
+        $('.stiky').addClass('scroll-header');
       } else {
-        $('.stiky').removeClass('sticky-menu');
+        $('.stiky').removeClass('scroll-header');
       }
     });
 
