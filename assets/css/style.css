@@ -263,7 +263,7 @@ body, html {
 }
 
 .po-main-menu ul li .sub-menu.sub-menu-2 li a:hover {
-    color: #E31112;
+    color: #7c2522;
 }
 .po-main-menu.po-main-menu-3 ul li:hover > a {
     color: #77C04B;
@@ -425,11 +425,11 @@ body, html {
 
 /* stiky header 2 */
 .po-header-area.po-stiky-header-2.stiky.scroll-header{
-    background: #E31112;
+    background: #7c2522;
 } 
 .po-header-area.po-stiky-header-2.stiky.scroll-header .po-btn-sec{
     background-color: #fff;
-    color: #E31112;
+    color: #7c2522;
 }
 
 /* stiky header 3 */
@@ -500,7 +500,7 @@ body, html {
     padding: 32px 24px;
 }
 /* .po-main-menu.po-main-menu-2 ul li:hover > a {
-    color: #E31112;
+    color: #7c2522;
 } */
 .po-main-menu.po-main-menu-2 ul > li:hover .po-mega-menu {
     opacity: 1;
@@ -778,7 +778,7 @@ body, html {
 
 /* btn (home-2) */
 .po-btn-sec {
-    background: #E31112;
+    background: #7c2522;
     padding: 16px 24px;
     font-size: 18px;
     border-radius: 5px;
@@ -1057,7 +1057,7 @@ section.po-bnr-4 {
 .subtitle-2 {
     border-radius: 7px;
     background: rgba(227, 17, 18, 0.05);
-    color: #E31112;
+    color: #7c2522;
 }
 .sec-title-2 {
     color: #15213D;
@@ -1087,7 +1087,7 @@ section.po-bnr-4 {
 }
 
 .po-icon-box-2:hover .po-icon span {
-    background-color: #E31112;
+    background-color: #7c2522;
     transform: rotateY(180deg);
 }
 .po-icon-box-2:hover .po-icon span img{
@@ -1367,7 +1367,7 @@ span.p-icon img {
 
 span.p-icon {
     display: inline-flex;
-    color: #D00606;
+    color: #7c2522;
 }
 span.progress-title {
     color: #CA2C51;
@@ -1470,7 +1470,7 @@ span.p-icon.p-icon-4 {
                    History AREA CSS (Home-2)
 ===============================================*/
 .po-his-slider-content .sec-title{
-    color: #E31112;
+    color: #7c2522;
 }
 
 .po-his-slider-content p{
@@ -1514,7 +1514,7 @@ span.priv_arrow{
     top: -10px;
     z-index: 999;
     cursor: pointer;
-    color: #E31112;
+    color: #7c2522;
     transition: .3s;
 }
 
@@ -1530,12 +1530,12 @@ span.next_arrow {
     left: 0;
     z-index: 999;
     cursor: pointer;
-    color: #E31112;
+    color: #7c2522;
     transition: .3s;
 }
 .next_arrow:hover, .priv_arrow:hover{
     transition: .3s;
-    background: #E31112;
+    background: #7c2522;
     color: #fff;
 }
 
@@ -1549,10 +1549,10 @@ span.next_arrow {
 }
 
 .po-history-nav-content.slick-current.slick-active .sec-title-2 {
-    color: #E31112;
+    color: #7c2522;
 }
 .po-history-nav-content.slick-current.slick-active:after {
-    background: #E31112;
+    background: #7c2522;
 }
 
 /* ==========================
@@ -1572,8 +1572,8 @@ span.next_arrow {
     top: 0;
     height: 100%;
     width: 100%;
-    opacity: 0.7;
-    background: #000565;
+    opacity: 0.85;
+    background: #7c2522;
 }
 
 .po-camping-content p {
@@ -2236,7 +2236,7 @@ span.next_arrow4 {
     overflow: hidden;
 }
 .po-nav-link.active {
-    background: #E31112;
+    background: #7c2522;
 }
 
 .po-naviicon span {
@@ -2510,7 +2510,7 @@ span.next_arrow4 {
     border-radius: 7px;
     display: inline-block;
     text-align: center;
-    color: #E31112;
+    color: #7c2522;
 }
 .po-testimonial-quote-2 {
     position: absolute;
@@ -2547,7 +2547,7 @@ span.next_arrow4 {
     margin-right: 20px;
 }
 .po-testi-nav-2.slick-current.slick-active {
-    background: #E31112 !important;
+    background: #7c2522 !important;
 }
 .po-testi-nav-2.slick-current.slick-active .po-testi-content-2 .sec-title-2{
     color: #fff;
@@ -3068,7 +3068,7 @@ button{
     display: block;
     font-weight: 500;
     margin-top: 8px;
-    color: #E31112;
+    color: #7c2522;
     transition: .3s;
 }
 
@@ -3077,7 +3077,7 @@ button{
     font-size: 20px;
     line-height: 20px;
     font-weight: 700;
-    color: #E31112;
+    color: #7c2522;
     transition: .3s;
 }
 .po-blog-meta-2 {
@@ -3118,7 +3118,7 @@ button{
 }
 
 .po-single-blog-2:hover .po-date-2{
-    background: #E31112;
+    background: #7c2522;
     color: #fff;
     transition: .3s;
 }
@@ -3133,7 +3133,7 @@ button{
 
 
 .po-single-blog-2:hover .blog-read-more-3{
-    color: #E31112;
+    color: #7c2522;
     transition: .3s;
 }
 
@@ -3340,7 +3340,7 @@ a.po-blg-meta-date {
     border-radius: 7px;
 }
 .cta-section-2{
-    background-color: #E31112;
+    background-color: #7c2522;
 }
 .po-cta-btn-2 {
     position: absolute;
@@ -3490,11 +3490,11 @@ a.po-blg-meta-date {
 
   /* progress home 2 */
   .progress-wrap-2::after {
-    color:#E31112;
+    color:#7c2522;
    }
  
    .progress-wrap-2 svg.progress-circle path {
-     stroke: #E31112; 
+     stroke: #7c2522; 
    }
 
 
@@ -3713,10 +3713,10 @@ a.po-blg-meta-date {
 
 
 .po-social.po-social-2 ul li a:hover{
-    background: #E31112;
+    background: #7c2522;
 }
 .po-footer-menu.po-footer-menu-2 ul li:hover a {
-    color: #E31112;
+    color: #7c2522;
     margin-left: 4px;
 }
 
@@ -3737,7 +3737,7 @@ a.po-blg-meta-date {
 }
 
 .po-footer-icon.po-footer-icon-2 span {
-    background: #E31112;
+    background: #7c2522;
 
 }
 
@@ -5548,7 +5548,7 @@ iframe.contact-page__google-map {
 
 /* preloader 2 */
 #loading2{
-	background-color: #E31112;
+	background-color: #7c2522;
 	height: 100%;
 	width: 100%;
 	position: fixed;
