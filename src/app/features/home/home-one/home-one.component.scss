@@ -1,0 +1,73 @@
+// Styles loaded globally
+
+/* Testimonial synced slider — flexbox layout overrides float */
+.banner-slider {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.banner-slider .slider.slider-for {
+  flex: 1 1 auto;
+  max-width: 570px;
+  float: none !important;
+}
+
+.banner-slider .slider.slider-nav {
+  flex: 0 0 100px;
+  width: 100px;
+  max-width: 100px;
+  float: none !important;
+  order: -1; /* nav thumbnails on the left */
+}
+
+
+/* Carrusel pilares Plan de Gobierno */
+.pilar-carousel {
+  padding-bottom: 48px;
+
+  .slick-dots {
+    bottom: 0;
+    li button::before {
+      color: var(--brand-red);
+      font-size: 10px;
+    }
+    li.slick-active button::before {
+      color: var(--brand-red);
+      opacity: 1;
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+    &::before {
+      color: var(--brand-red);
+      font-size: 28px;
+    }
+  }
+  .slick-prev { left: -30px; }
+  .slick-next { right: -30px; }
+}
+
+/* Candidato tabs */
+#candidatoTabs .nav-link.active {
+  color: var(--brand-red) !important;
+  border-bottom: 3px solid var(--brand-red) !important;
+}
+#candidatoTabs .nav-link:hover {
+  color: var(--brand-red) !important;
+}
+
+@media (max-width: 991px) {
+  .banner-slider {
+    flex-direction: column;
+  }
+  .banner-slider .slider.slider-for,
+  .banner-slider .slider.slider-nav {
+    max-width: 100%;
+    width: 100%;
+    flex: unset;
+    order: unset;
+  }
+}

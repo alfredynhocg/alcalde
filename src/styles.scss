@@ -1,0 +1,221 @@
+/* =============================================
+   DAMASO NINAJA - Colores de marca
+   Rojo:    #CC0000
+   Dorado:  #FFB800
+   ============================================= */
+
+:root {
+  --brand-red:    #CC0000;
+  --brand-gold:   #FFB800;
+  --brand-dark:   #1a1a1a;
+}
+
+/* ── Botones (todos los temas) ── */
+.po-btn-sec {
+  background-color: var(--brand-red) !important;
+  border-color: var(--brand-red) !important;
+}
+.po-btn-sec:hover {
+  background-color: var(--brand-gold) !important;
+  border-color: var(--brand-gold) !important;
+}
+
+/* ── Fondos que usaban azul oscuro #000565 → rojo marca ── */
+.po-header-area.stiky.scroll-header,
+.po-header-area-3.stiky.scroll-header,
+.po-contact-phone,
+.testimonial-sub-bg,
+.testimonial-bg-1,
+.subtitle-bg-3,
+section.breadcrumb-bg,
+#loading,
+#loading2 {
+  background-color: var(--brand-red) !important;
+}
+
+/* ── Overlay de banner y secciones con fondo #000565 ── */
+.po-banner-area::after,
+.cta-section::after {
+  background: var(--brand-red) !important;
+}
+
+/* Overlay Plan de Gobierno — semitransparente para que el texto sea legible */
+.po-camping-bg::after {
+  background: rgba(204, 0, 0, 0.93) !important;
+}
+
+/* El contenido dentro de po-camping-bg debe estar por encima del overlay ::after */
+.po-camping-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Íconos / etiquetas con fondo #000565 ── */
+.po-ser-ic span,
+.po-eve-timer .smalltext {
+  background: var(--brand-red) !important;
+}
+
+/* ── Texto que usaba #000565 ── */
+.po-blg-date {
+  color: var(--brand-red) !important;
+}
+
+/* ── Footer — fondo oscuro carbón ── */
+.po-footer-section,
+.po-footer-section.footer-bg-2 {
+  background-color: #2b2b2b !important;
+}
+
+/* ── Fondos que usaban rojo template ── */
+.cta-section-2 {
+  background-color: var(--brand-red) !important;
+}
+
+/* ── Colores de texto acento (rojo) ── */
+.sec-subtitle,
+.sec-subtitle-1,
+.sec-subtitle-2,
+.sec-subtitle-3,
+.subtitle-2,
+.sec-title-2,
+.po-cmn-title-2,
+.blog-read-more,
+.blog-read-more-3,
+.po-camp-title a:hover,
+.po-main-menu ul li:hover > a,
+.po-main-menu ul li .sub-menu li:hover a {
+  color: var(--brand-red) !important;
+}
+
+/* ── Badges / subtítulos con fondo rojo ── */
+.sec-subtitle,
+.sec-subtitle-1,
+.sec-subtitle-2,
+.subtitle-2 {
+  background-color: var(--brand-red) !important;
+  color: #fff !important;
+}
+
+/* ── Acento dorado ── */
+.po-subtitle2,
+.date-2,
+.po-history-nav-content h3,
+.po-check-ic span i,
+.po-blog-meta-2 .po-date-2 a,
+.po-slider-reviews ul li a i,
+.po-testimonial-reviews-2 i {
+  color: var(--brand-gold) !important;
+}
+
+/* ── Bordes ── */
+.po-border-top-2 {
+  border-color: rgba(204, 0, 0, 0.3) !important;
+}
+
+/* ── Borde lateral quote ── */
+.po-about-quote {
+  border-left-color: var(--brand-red) !important;
+}
+
+/* ── Hover links de eventos ── */
+.event-locations a:hover {
+  color: var(--brand-gold) !important;
+}
+
+/* ── Facebook video preview card ── */
+.fb-video-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 263px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.fb-video-preview:hover {
+  filter: brightness(1.15);
+}
+
+.fb-play-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fb-play-icon .fa-facebook {
+  font-size: 2.4rem;
+  color: #1877F2;
+}
+
+.fb-play-icon .fa-circle-play {
+  font-size: 2.8rem;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.fb-video-preview:hover .fa-circle-play {
+  color: var(--brand-gold);
+}
+
+.fb-label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Global Angular SPA ── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+a[routerLink] {
+  cursor: pointer;
+}
+
+/* Elementos host de Angular son inline por defecto - forzar block para no romper layout */
+app-root,
+app-main-layout,
+app-preloader,
+app-header,
+app-footer,
+app-breadcrumb,
+app-home-one,
+app-home-two,
+app-home-three,
+app-home-four,
+app-about,
+app-events-list,
+app-events-left,
+app-events-right,
+app-events-single,
+app-service-list,
+app-service-left,
+app-service-right,
+app-service-single,
+app-blog-list,
+app-blog-left,
+app-blog-right,
+app-blog-single,
+app-team,
+app-history,
+app-gallery,
+app-faq,
+app-contact,
+app-not-found {
+  display: block;
+  width: 100%;
+}
+
+router-outlet + * {
+  display: block;
+  width: 100%;
+}

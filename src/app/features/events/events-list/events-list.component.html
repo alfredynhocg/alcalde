@@ -1,0 +1,60 @@
+<app-breadcrumb title="Our Events"></app-breadcrumb>
+
+<!-- events grid -->
+<section class="po-blogs pt-100 pb-70">
+  <div class="container">
+    <div class="row">
+      @for (item of events; track item.title) {
+        <div class="col-xl-4 col-md-6 mb-30">
+          <div class="po-single-blg">
+            <div class="po-single-blg-img">
+              <a routerLink="/events/single"><img class="w-100" [src]="item.img" alt=""></a>
+            </div>
+            <div class="po-camp-content gray-bg-4">
+              <div class="po-camp-meta-box">
+                <a href="#" class="po-single-meta-box">
+                  <div class="po-meta-content"><p class="po-blg-date">{{ item.date }}</p></div>
+                </a>
+                <a href="#" class="po-single-meta-box">
+                  <div class="po-meta-box-ic"><img src="assets/img/icon/po-time.svg" alt=""></div>
+                  <div class="po-meta-content"><p>{{ item.time }}</p></div>
+                </a>
+              </div>
+              <h3 class="po-camp-title font-bold text-20 leading-28 pt-16 pb-16">
+                <a routerLink="/events/single">{{ item.title }}</a>
+              </h3>
+              <p>{{ item.desc }}</p>
+              <a routerLink="/events/single" class="blog-read-more font-bold text-16 leading-16 pt-16">
+                Read More <span><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section relative pt-80 pb-80" style="background-image: url(assets/img/banner/po-cta-bg-1.1.jpg);">
+  <div class="container">
+    <div class="po-cta-content text-center">
+      <div class="po-cta-icon"><a href="#"><img src="assets/img/icon/po-download-1.1.svg" alt=""></a></div>
+      <h3 class="po-cta-title text-white font-bold text-40 leading-50 pt-32 pb-16">It's Election Day-Go Vote!<br> Join the Campaign</h3>
+      <p>Be a part of something bigger and join our movement for change!</p>
+      <div class="po-cta-subcribe">
+        <form action="#">
+          <input type="email" placeholder="Enter Your email">
+          <div class="po-cta-btn">
+            <button type="submit" class="po-btn-sec po-btn-sec-1">
+              <span class="po-btn-wrap">
+                <span class="po-btn-y-1">Joining Now</span>
+                <span class="po-btn-y-2">Joining Now</span>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
