@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1772837129346,
+  "timestamp": 1772837421686,
   "index": "/alcalde/index.html",
   "assetGroups": [
     {
@@ -41,7 +41,7 @@
         "/alcalde/chunk-ZXWO7D54.js",
         "/alcalde/favicon.ico",
         "/alcalde/index.html",
-        "/alcalde/main-YFT3ZZNF.js",
+        "/alcalde/main-QL5UNCVO.js",
         "/alcalde/manifest.webmanifest",
         "/alcalde/scripts-AMGRCBQM.js",
         "/alcalde/styles-HHNHTICX.css"
@@ -690,8 +690,8 @@
     "/alcalde/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/alcalde/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/alcalde/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/alcalde/index.html": "539ab1731fa637a60a11bb3a8da95c4a9af99e52",
-    "/alcalde/main-YFT3ZZNF.js": "450d8c774ca440ff46318f5ef23b87b34603e35d",
+    "/alcalde/index.html": "ad99ea2d904031ecdbd211fb0c8ec3b00873cac0",
+    "/alcalde/main-QL5UNCVO.js": "ff058c07e5710913524ebd969eda1a8d7fef3058",
     "/alcalde/manifest.webmanifest": "5ce5f7150ea8d17009294321ebd7163b0b47e8d0",
     "/alcalde/media/fa-brands-400-5VUR4SR3.ttf": "01e3f462286c504627939570408046bbc859216b",
     "/alcalde/media/fa-brands-400-NM3AAX4O.woff2": "9dc6a6750e7d1b22fe3ae3fab7bd13ed1452915f",
