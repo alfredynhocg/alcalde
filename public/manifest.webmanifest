@@ -1,0 +1,21 @@
+{
+  "name": "damaso",
+  "short_name": "damaso",
+  "display": "standalone",
+  "scope": "/alcalde/",
+  "start_url": "/alcalde/",
+  "icons": [
+    {
+      "src": "assets/img/logo/alianza.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/img/logo/alianza.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

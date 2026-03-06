@@ -1,1 +1,96 @@
 // Styles loaded globally
+
+// Pilar modals
+.pilar-modal {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pilar-modal-header {
+  background: #c0392b;
+  color: #fff;
+  padding: 24px 28px;
+  border: none;
+  align-items: flex-start;
+
+  .pilar-num {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+  }
+
+  .pilar-lema {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+.pilar-modal-body {
+  padding: 28px;
+
+  .pilar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    li {
+      padding-left: 22px;
+      position: relative;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+
+      &::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: #c0392b;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .pilar-quote {
+    background: #fdf3f2;
+    border-left: 4px solid #c0392b;
+    padding: 14px 18px;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #c0392b;
+    font-weight: 600;
+  }
+}
+
+.pilar-modal-footer {
+  background: #f8f8f8;
+  border-top: 1px solid #eee;
+  padding: 12px 28px;
+  justify-content: flex-start;
+
+  small {
+    color: #999;
+    font-size: 12px;
+  }
+}

@@ -1,15 +1,46 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Damaso | Political Campaign</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Official campaign website - Together for change, a new path forward">
-  <meta name="theme-color" content="#c0392b">
-  <link rel="icon" type="image/svg+xml" href="assets/img/icon/po-fav-ic-1.1.svg">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ing. Damaso Ninaja Huanca | Candidato a Alcalde Achocalla 2026-2031</title>
+    <base href="/" />
+
+    <!-- Viewport y mobile optimization -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <!-- PWA / iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Damaso Alcalde" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Ing. Damaso Ninaja Huanca, candidato a Alcalde de Achocalla 2026-2031. Alianza Unidos por los Pueblos. Experiencia para avanzar, capacidad para transformar Achocalla."
+    />
+    <meta name="keywords" content="Damaso Ninaja, Alcalde Achocalla, candidato, 2026, Alianza Unidos por los Pueblos, Bolivia" />
+    <meta name="author" content="Ing. Damaso Ninaja Huanca" />
+
+    <!-- Theme color (rojo campaña) -->
+    <meta name="theme-color" content="#c0392b" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/img/icon/po-fav-ic-1.1.svg" />
+
+    <!-- Google Fonts preconnect (carga más rápida) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload imagen hero (LCP crítico) -->
+    <link rel="preload" as="image" href="assets/img/banner/po-banner1.1.jpg" fetchpriority="high" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.webmanifest" />
+  </head>
+  <body>
+    <app-root></app-root>
+    <noscript>Damaso Alcalde requiere JavaScript para funcionar correctamente.</noscript>
+  </body>
 </html>

@@ -1,1 +1,256 @@
 // Styles loaded globally
+
+.vol-highlight { color: #c0392b; }
+
+// Badges
+.vol-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.vol-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+// Card container
+.vol-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  overflow: hidden;
+}
+
+.vol-card-header {
+  background: #c0392b;
+  padding: 28px 32px 24px;
+
+  @media (max-width: 576px) {
+    padding: 20px 20px 18px;
+  }
+}
+
+.vol-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.vol-card-subtitle {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+.vol-card-body {
+  padding: 28px 32px;
+
+  @media (max-width: 576px) {
+    padding: 20px 20px;
+  }
+}
+
+// Two-column row for fields
+.vol-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Field
+.vol-field {
+  margin-bottom: 18px;
+}
+
+// Label
+.vol-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+// Input
+.vol-input {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+
+  &::placeholder { color: #aaa; }
+
+  &:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    background: #fff;
+  }
+}
+
+// Select
+.vol-select-wrap {
+  position: relative;
+}
+
+.vol-select {
+  display: block;
+  width: 100%;
+  padding: 11px 38px 11px 14px;
+  height: 44px;
+  line-height: 1.4;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a !important;
+  background: #fafafa !important;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  text-decoration: none !important;
+  overflow: visible;
+
+  &:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192,57,43,0.1);
+    background: #fff;
+  }
+
+  option {
+    color: #1a1a1a;
+    background: #fff;
+  }
+}
+
+.vol-select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #c0392b;
+  font-size: 11px;
+  pointer-events: none;
+}
+
+// Checkboxes
+.vol-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.vol-check {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+
+  input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    min-width: 17px;
+    accent-color: #c0392b;
+    cursor: pointer;
+    margin-top: 2px;
+  }
+
+  span {
+    flex: 1;
+  }
+}
+
+// Submit button
+.vol-submit {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    background: #a93226;
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    background: #d88;
+    cursor: not-allowed;
+  }
+}
+
+// Success state
+.vol-success {
+  text-align: center;
+  padding: 48px 32px;
+
+  @media (max-width: 576px) {
+    padding: 36px 20px;
+  }
+}
+
+.vol-success-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.vol-success-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.vol-success-text {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.vol-success-lema {
+  font-size: 16px;
+  font-weight: 700;
+  color: #c0392b;
+  margin-bottom: 0;
+}

@@ -44,6 +44,13 @@ Desc:
         text-decoration: none;
     }
 
+    .mobile-logo img,
+    .logo-m img {
+        max-height: 50px;
+        width: auto;
+        display: block;
+    }
+
 
     .mobile-logo-unick {
         margin-top: -30px;

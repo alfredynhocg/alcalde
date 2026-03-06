@@ -1,4 +1,4 @@
-<app-breadcrumb title="Our Department"></app-breadcrumb>
+<app-breadcrumb title="Damaso Alcalde"></app-breadcrumb>
 
 <!-- about section start -->
 <section class="po-about-area pt-100 pb-70">
@@ -11,24 +11,89 @@
             <div class="po-plus-shape-iner"><img src="assets/img/icon/plus-2.svg" alt=""></div>
           </div>
           <div class="po-ab-iner-img"><img class="w-100" src="assets/img/about/po-about-4.1.png" alt=""></div>
-          <div class="po-ab-sm-img"><img src="assets/img/about/po-about-4.2.png" alt=""></div>
         </div>
       </div>
       <div class="col-xl-6 mb-30">
         <div class="po-about-content">
           <div class="po-section-title">
-            <div class="iner-sub-heading"><h4 class="sec-subtitle iner-subtitle">About Us</h4></div>
-            <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16">Get to Know Us: Our Vision, Values, and Goals</h2>
-            <p class="pb-32">We are a dedicated team of leaders, activists, and community members united by a common goal: to create meaningful change &amp; build a brighter future for all. Our mission is rooted in the principles of integrity.</p>
-            <p class="po-about-quote rounded-7 leading-26">With a diverse range of experiences &amp; perspectives, we bring passion &amp; expertise to every challenge we face. We believe in the power.</p>
-            <div class="po-about-btn pt-32">
-              <a routerLink="/contact" class="po-btn-sec po-btn-sec-1">
-                <span class="po-btn-wrap">
-                  <span class="po-btn-y-1">Get In Touch</span>
-                  <span class="po-btn-y-2">Get In Touch</span>
-                </span>
-              </a>
+            <div class="iner-sub-heading"><h4 class="sec-subtitle iner-subtitle">Candidato</h4></div>
+            <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16">Hijo de <span style="color:#c0392b;">Achocalla</span></h2>
+          </div>
+
+          <!-- Tabs nav -->
+          <ul class="about-tabs nav" id="aboutTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="about-tab-btn nav-link active" id="tab-historia" data-bs-toggle="tab" data-bs-target="#pane-historia" type="button" role="tab">MI HISTORIA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="about-tab-btn nav-link" id="tab-trayectoria" data-bs-toggle="tab" data-bs-target="#pane-trayectoria" type="button" role="tab">TRAYECTORIA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="about-tab-btn nav-link" id="tab-comunidad" data-bs-toggle="tab" data-bs-target="#pane-comunidad" type="button" role="tab">COMUNIDAD</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="about-tab-btn nav-link" id="tab-compromiso" data-bs-toggle="tab" data-bs-target="#pane-compromiso" type="button" role="tab">COMPROMISO</button>
+            </li>
+          </ul>
+
+          <!-- Tab content -->
+          <div class="tab-content about-tab-content pt-24" id="aboutTabContent">
+
+            <!-- MI HISTORIA -->
+            <div class="tab-pane fade show active" id="pane-historia" role="tabpanel">
+              <p class="leading-26 pb-16">Soy Damaso Teodoro Ninaja Huanca, orgulloso hijo de esta tierra. Nací el 8 de diciembre de 1978 en la zona El Calvario de la comunidad Pucarani, en nuestro querido municipio de Achocalla.</p>
+              <p class="leading-26">Crecí en una familia humilde que me enseñó el valor del trabajo, la honestidad y el esfuerzo. Estudié en la Escuela René Barrientos Ortuño y el Colegio Nacional Mixto Achocalla. Gracias al sacrificio de mis padres, me formé como <strong>Ingeniero Industrial e Ingeniero Civil</strong> en la UMSA — además de diplomados, maestría y experiencia como docente en UPEA y UMSA.</p>
             </div>
+
+            <!-- TRAYECTORIA -->
+            <div class="tab-pane fade" id="pane-trayectoria" role="tabpanel">
+              <div class="about-timeline">
+                <div class="about-timeline-item">
+                  <span class="about-tl-year">UMSA</span>
+                  <h4 class="about-tl-title">ING. INDUSTRIAL &amp; ING. CIVIL</h4>
+                  <p>Doble titulación, diplomados y maestría. Docente universitario en UPEA y UMSA.</p>
+                </div>
+                <div class="about-timeline-item">
+                  <span class="about-tl-year">DESDE JOVEN</span>
+                  <h4 class="about-tl-title">LÍDER COMUNITARIO EN ACHOCALLA</h4>
+                  <p>Presidente de JJ.VV., Secretario General de comunidades — construyendo desde las bases.</p>
+                </div>
+                <div class="about-timeline-item">
+                  <span class="about-tl-year">2015 – 2021</span>
+                  <h4 class="about-tl-title">ALCALDE MUNICIPAL DE ACHOCALLA</h4>
+                  <p>Gestión con obras de impacto, mejora de servicios y transformación real del municipio.</p>
+                </div>
+                <div class="about-timeline-item">
+                  <span class="about-tl-year">2026 – 2031</span>
+                  <h4 class="about-tl-title">CANDIDATO A ALCALDE · LISTA N° 7</h4>
+                  <p>Con mayor experiencia, propone 12 pilares para el desarrollo integral de Achocalla.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- COMUNIDAD -->
+            <div class="tab-pane fade" id="pane-comunidad" role="tabpanel">
+              <ul class="about-list">
+                <li>Presidente de la Junta de Vecinos — zona El Calvario</li>
+                <li>Coordinador General de las Juntas Vecinales</li>
+                <li>Secretario General de la comunidad Pucarani</li>
+                <li>Secretario de Relaciones de la Subcentral Cayo</li>
+                <li>Secretario General de la Subcentral Cayo</li>
+                <li>Concejo Educativo en U.E. René Barrientos Ortuño y U.E. Tuni</li>
+              </ul>
+            </div>
+
+            <!-- COMPROMISO -->
+            <div class="tab-pane fade" id="pane-compromiso" role="tabpanel">
+              <p class="leading-26 pb-16">Hoy, con más experiencia, mayor preparación y el mismo compromiso de siempre, asumo nuevamente el desafío de trabajar por Achocalla. <strong>Porque necesita seguir avanzando</strong>, con gestión responsable y visión de futuro.</p>
+              <ul class="about-list">
+                <li>✓ Experiencia profesional para avanzar</li>
+                <li>✓ Capacidad técnica para trabajar</li>
+                <li>✓ Compromiso firme para transformar</li>
+                <li>✓ Raíces achocalleñas — sirvo con vocación</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
@@ -37,7 +102,7 @@
 </section>
 
 <!-- choose us section -->
-<section class="po-chose gray-bg pt-100 pb-70">
+<!-- <section class="po-chose gray-bg pt-100 pb-70">
   <div class="container">
     <div class="row">
       <div class="col-xl-3 col-md-6">
@@ -76,10 +141,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- values section start -->
-<section class="po-valus pt-100 pb-70">
+<!-- <section class="po-valus pt-100 pb-70">
   <div class="container">
     <div class="row">
       <div class="col-xl-6 mb-30">
@@ -128,10 +193,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- video / counter section start -->
-<section class="po-video-sec gray-bg pt-100 pb-70">
+<!-- <section class="po-video-sec gray-bg pt-100 pb-70">
   <div class="container">
     <div class="row align-items-center">
       <div class="col-xl-6 mb-30">
@@ -191,10 +256,10 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- team section -->
-<section class="po-team-4 pt-100 pb-70">
+<!-- <section class="po-team-4 pt-100 pb-70">
   <div class="container">
     <div class="po-section-title text-center mb-60">
       <div class="iner-sub-heading"><h4 class="sec-subtitle iner-subtitle">Our Member</h4></div>
@@ -272,28 +337,15 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CTA section -->
 <section class="cta-section relative pt-80 pb-80" style="background-image: url(assets/img/banner/po-cta-bg-1.1.jpg);">
   <div class="container">
     <div class="po-cta-content text-center">
-      <div class="po-cta-icon"><a href="#"><img src="assets/img/icon/po-download-1.1.svg" alt=""></a></div>
-      <h3 class="po-cta-title text-white font-bold text-40 leading-50 pt-32 pb-16">It's Election Day-Go Vote!<br> Join the Campaign</h3>
-      <p>Be a part of something bigger and join our movement for change!</p>
-      <div class="po-cta-subcribe">
-        <form action="#">
-          <input type="email" placeholder="Enter Your email">
-          <div class="po-cta-btn">
-            <button type="submit" class="po-btn-sec po-btn-sec-1">
-              <span class="po-btn-wrap">
-                <span class="po-btn-y-1">Joining Now</span>
-                <span class="po-btn-y-2">Joining Now</span>
-              </span>
-            </button>
-          </div>
-        </form>
-      </div>
+      <h3 class="po-cta-title text-white font-bold text-40 leading-50 pt-32 pb-16">Unidos por Achocalla<br> Tu voto transforma</h3>
+      <h2 class="text-white font-bold text-32 pb-16">Achocalla</h2>
+      <p class="text-white">"Con tu apoyo, Achocalla seguirá avanzando hacia un futuro mejor para todas las familias."</p>
     </div>
   </div>
 </section>

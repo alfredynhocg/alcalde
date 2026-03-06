@@ -1,29 +1,100 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { ScriptsInitService } from '../../../core/services/scripts-init.service';
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BreadcrumbComponent } from '../../../shared/components/breadcrumb/breadcrumb.component';
+
+interface ZonaObra {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+interface Zona {
+  id: string;
+  label: string;
+  sub: string;
+  obras: ZonaObra[];
+}
 
 @Component({
   selector: 'app-events-list',
   standalone: true,
-  imports: [RouterLink, BreadcrumbComponent],
+  imports: [BreadcrumbComponent, FormsModule],
   templateUrl: './events-list.component.html',
   styleUrl: './events-list.component.scss'
 })
-export class EventsListComponent implements AfterViewInit {
-  constructor(private scripts: ScriptsInitService) {}
+export class EventsListComponent {
+  selectedZona = '';
 
-  events = [
-    { img: 'assets/img/blog/po-blog-single-1.1.png', date: 'Aug 24,2024', time: '11:00 am', title: 'The Economy of the US: What are the Weakest Spots?', desc: 'Our events are more than just gatherings — they are opportunities to connect, learn, & take action together.' },
-    { img: 'assets/img/blog/po-blog-single-1.2.png', date: 'Aug 24,2024', time: '11:00 am', title: 'The Right of the US: Lets fight for right in Alabama', desc: 'Whether it\'s a hall meeting, a volunteer rally, or a community workshop, each event is designed to bring people.' },
-    { img: 'assets/img/blog/po-blog-single-1.3.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Upcoming Events: Join Action Mark Your Calendar for Next', desc: 'We believe in the power of collective action, & our events are a crucial part of how we engage with the community.' },
-    { img: 'assets/img/blog/po-blog-single-1.4.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Be Part of the Movement — Events That Inspire Change', desc: 'You can make a tangible impact & help shape the future we\'re working towards — join us at our upcoming events.' },
-    { img: 'assets/img/blog/po-blog-single-1.5.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Stay Connected: Upcoming Invitation to Engage with Us', desc: 'Our events are the heartbeat of our campaign, bringing together supporters, leaders, and community members.' },
-    { img: 'assets/img/blog/po-blog-single-1.6.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Street Townsville Sketches And Urban History', desc: 'From intimate discussions on local issues to large-scale rallies, each event is crafted to inspire, inform, & mobilize.' },
-    { img: 'assets/img/blog/po-blog-single-1.7.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Take Action: Attend Our Events Where Ideas Become Reality', desc: 'These gatherings provide a platform for you to share your thoughts and connect with others who share your values.' },
-    { img: 'assets/img/blog/po-blog-single-1.8.png', date: 'Aug 24,2024', time: '11:00 am', title: 'Engage with Upcoming Events Together for a Better Future', desc: 'We invite you to join us at our upcoming events, where your presence and voice will make a difference.' },
-    { img: 'assets/img/blog/po-blog-single-1.9.png', date: 'Aug 24,2024', time: '11:00 am', title: 'City Job Fair 2026 For Civil And Mechanical Engineers', desc: 'Get involved and make your voice heard by joining us at our exciting campaign events!' },
+  zonas: Zona[] = [
+    {
+      id: 'calvario',
+      label: '📍 Zona El Calvario',
+      sub: 'Comunidad de origen del candidato · Distrito Norte',
+      obras: [
+        { icon: '🛣', title: 'Asfaltado Calle Principal', desc: 'Pavimentación de la vía de acceso principal a la zona' },
+        { icon: '💧', title: 'Red de Agua Potable', desc: 'Ampliación de la red domiciliaria de agua potable' },
+        { icon: '🔦', title: 'Alumbrado Público', desc: 'Instalación de luminarias LED en calles principales' },
+        { icon: '🏞', title: 'Área Verde y Cancha', desc: 'Habilitación de espacio recreativo comunitario' },
+      ]
+    },
+    {
+      id: 'pucarani',
+      label: '📍 Comunidad Pucarani',
+      sub: 'Comunidad rural · Origen del candidato',
+      obras: [
+        { icon: '🚗', title: 'Mejoramiento Camino Vecinal', desc: 'Mantenimiento y ripiado del acceso a la comunidad' },
+        { icon: '💧', title: 'Sistema de Agua Potable', desc: 'Nuevo sistema de captación y distribución' },
+        { icon: '🏫', title: 'Infraestructura Educativa', desc: 'Mejoramiento y equipamiento de la unidad educativa' },
+        { icon: '🌾', title: 'Apoyo Productivo', desc: 'Maquinaria y asistencia técnica para agricultores' },
+      ]
+    },
+    {
+      id: 'central',
+      label: '📍 Zona Central — Achocalla',
+      sub: 'Centro urbano del municipio',
+      obras: [
+        { icon: '🏥', title: 'Hospital de Especialidades', desc: 'Gestión del hospital de segundo nivel para todo el municipio' },
+        { icon: '🛣', title: 'Adoquinado Vías Principales', desc: 'Mejoramiento del centro urbano con adoquín' },
+        { icon: '🏟', title: 'Polideportivo Municipal', desc: 'Construcción del complejo deportivo central' },
+        { icon: '💻', title: 'Gobierno Digital', desc: 'Portal de transparencia y atención ciudadana digital' },
+      ]
+    },
+    {
+      id: 'cayo',
+      label: '📍 Subcentral Cayo',
+      sub: 'Zona rural productiva',
+      obras: [
+        { icon: '🚗', title: 'Caminos Vecinales', desc: 'Apertura y mantenimiento de vías de acceso' },
+        { icon: '🐄', title: 'Apoyo Ganadero', desc: 'Fortalecimiento a asociaciones lecheras locales' },
+        { icon: '💧', title: 'Reservorio de Agua', desc: 'Construcción de reservorio para riego y consumo' },
+        { icon: '🔌', title: 'Electrificación Rural', desc: 'Cobertura eléctrica para comunidades sin servicio' },
+      ]
+    },
+    {
+      id: 'tuni',
+      label: '📍 Zona Tuni',
+      sub: 'Comunidad escolar y vecinal',
+      obras: [
+        { icon: '🏫', title: 'U.E. Tuni — Infraestructura', desc: 'Construcción de nuevas aulas y equipamiento' },
+        { icon: '🛣', title: 'Mejoramiento Vial', desc: 'Ripiado y compactación de accesos principales' },
+        { icon: '⚽', title: 'Campo Deportivo', desc: 'Cancha de fútbol con graderías y vestuarios' },
+        { icon: '💡', title: 'Alumbrado Público', desc: 'Luminarias solares en calles y accesos' },
+      ]
+    },
+    {
+      id: 'lagunas',
+      label: '📍 Zona Lagunas',
+      sub: 'Patrimonio natural y turístico de Achocalla',
+      obras: [
+        { icon: '🌊', title: 'Recuperación de Lagunas', desc: 'Plan integral de descontaminación y restauración' },
+        { icon: '🚶', title: 'Senderos Turísticos', desc: 'Construcción de senderos y miradores ecológicos' },
+        { icon: '🍽', title: 'Infraestructura Gastronómica', desc: 'Quioscos y áreas de servicios turísticos' },
+        { icon: '🚗', title: 'Acceso Vial Turístico', desc: 'Mejoramiento del camino de acceso a las lagunas' },
+      ]
+    },
   ];
 
-  ngAfterViewInit(): void { this.scripts.init(); }
+  get zonaActiva(): Zona | undefined {
+    return this.zonas.find(z => z.id === this.selectedZona);
+  }
 }
