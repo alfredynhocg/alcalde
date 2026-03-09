@@ -5,12 +5,12 @@
   <div class="container">
     <div class="po-section-title text-center mb-60" data-aos="fade-up" data-aos-duration="800">
       <div class="iner-sub-heading"><h4 class="sec-subtitle iner-subtitle">Plan de Gobierno 2026–2031</h4></div>
-      <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16">12 Pilares para el Desarrollo de Achocalla</h2>
+      <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16">12 Propuestas para mejorar Achocalla</h2>
     </div>
   </div>
 </section>
 
-<!-- 12 Pilares grid -->
+<!-- 12 Propuestas grid -->
 <section class="po-ser-sec pt-0 pb-70">
   <div class="container">
     <div class="row">
@@ -200,12 +200,25 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body pilar-modal-body">
-        <ul class="pilar-list">
-          <li>Gestión de Hospital de Segundo Nivel con especialidades.</li>
-          <li>Gestión de Hospital Materno Infantil.</li>
-          <li>Fortalecimiento y equipamiento de centros de salud con laboratorio y ecografía.</li>
-        </ul>
-        <blockquote class="pilar-quote">"La salud llega donde está la gente"</blockquote>
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl">
+            <video controls [src]="activeVideoUrl" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo(1, hospitalVideoUrl)" [class.active]="activeItem === 1">
+                Gestión de Hospital de Segundo Nivel con especialidades.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li>Gestión de Hospital Materno Infantil.</li>
+              <li (click)="selectVideo(3, centroSaludVideoUrl)" [class.active]="activeItem === 3">
+                Fortalecimiento y equipamiento de centros de salud con laboratorio y ecografía.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"La salud llega donde está la gente"</blockquote>
+          </div>
+        </div>
       </div>
       <div class="modal-footer pilar-modal-footer">
         <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
@@ -227,12 +240,28 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body pilar-modal-body">
-        <ul class="pilar-list">
-          <li>Construcción y mantenimiento de todas las unidades educativas.</li>
-          <li>Acceso a tecnología y bibliotecas digitales.</li>
-          <li>Construcción, apertura y funcionamiento de Institutos Tecnológicos Municipales.</li>
-        </ul>
-        <blockquote class="pilar-quote">"Formando el futuro de Achocalla."</blockquote>
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl2">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl2">
+            <video controls [src]="activeVideoUrl2" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo2(1, normalVideoUrl)" [class.active]="activeItem2 === 1">
+                Construcción y mantenimiento de todas las unidades educativas.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li (click)="selectVideo2(2, guarderiaVideoUrl)" [class.active]="activeItem2 === 2">
+                Acceso a tecnología y bibliotecas digitales.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li (click)="selectVideo2(3, educacionVideoUrl)" [class.active]="activeItem2 === 3">
+                Construcción, apertura y funcionamiento de Institutos Tecnológicos Municipales.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"Formando el futuro de Achocalla."</blockquote>
+          </div>
+        </div>
       </div>
       <div class="modal-footer pilar-modal-footer">
         <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
@@ -443,12 +472,25 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body pilar-modal-body">
-        <ul class="pilar-list">
-          <li>Gestión y construcción de una EPI (Estación Policial Integral).</li>
-          <li>Gestión para la construcción de infraestructura del edificio judicial.</li>
-          <li>Más efectivos policiales y módulos de seguridad.</li>
-        </ul>
-        <blockquote class="pilar-quote">"La seguridad no se improvisa, se planifica."</blockquote>
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl10">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl10">
+            <video controls [src]="activeVideoUrl10" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo10(1, policialVideoUrl)" [class.active]="activeItem10 === 1">
+                Gestión y construcción de una EPI (Estación Policial Integral).
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li>Gestión para la construcción de infraestructura del edificio judicial.</li>
+              <li (click)="selectVideo10(3, seguridadVideoUrl)" [class.active]="activeItem10 === 3">
+                Más efectivos policiales y módulos de seguridad.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"La seguridad no se improvisa, se planifica."</blockquote>
+          </div>
+        </div>
       </div>
       <div class="modal-footer pilar-modal-footer">
         <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>

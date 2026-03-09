@@ -28,13 +28,20 @@
 .testimonial-bg-1,
 .subtitle-bg-3,
 section.breadcrumb-bg,
-#loading,
 #loading2 {
   background-color: var(--brand-red) !important;
 }
 
-/* ── Overlay de banner y secciones con fondo #000565 ── */
-.po-banner-area::after,
+#loading {
+  background-color: #ffffff !important;
+}
+
+/* ── Overlay de banner: desactivar overlay sólido del tema ── */
+.po-banner-area::after {
+  display: none !important;
+}
+
+/* ── Overlay CTA con fondo rojo de marca ── */
 .cta-section::after {
   background: var(--brand-red) !important;
 }
@@ -121,6 +128,19 @@ section.breadcrumb-bg,
 /* ── Hover links de eventos ── */
 .event-locations a:hover {
   color: var(--brand-gold) !important;
+}
+
+/* ── Imagen de eventos: tamaño fijo para que todas se vean igual ── */
+.po-event-img {
+  flex-shrink: 0;
+  width: 140px;
+  min-width: 140px;
+}
+.po-event-img img {
+  width: 140px !important;
+  height: 140px !important;
+  object-fit: cover !important;
+  border-radius: 7px;
 }
 
 /* ── Facebook video preview card ── */
@@ -218,4 +238,194 @@ app-not-found {
 router-outlet + * {
   display: block;
   width: 100%;
+}
+
+/* ── Pilar modals (compartidos entre home y plan de gobierno) ── */
+.pilar-modal {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+
+  .modal-body {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
+.pilar-modal-header {
+  background: #7c2522;
+  color: #fff;
+  padding: 24px 28px;
+  border: none;
+  align-items: flex-start;
+
+  .pilar-num {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+
+  .modal-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px;
+  }
+
+  .pilar-lema {
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    margin: 0;
+    font-style: italic;
+  }
+}
+
+.pilar-modal-body {
+  padding: 28px;
+
+  .pilar-content-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+
+  .pilar-video-col {
+    flex: 0 0 45%;
+    max-width: 45%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+
+    video {
+      width: 100%;
+      display: block;
+      max-height: 340px;
+      object-fit: contain;
+    }
+
+    @media (max-width: 576px) {
+      flex: none;
+      max-width: 100%;
+      width: 100%;
+
+      video {
+        max-height: 200px;
+      }
+    }
+  }
+
+  .pilar-text-col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pilar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    li {
+      position: relative;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+      border-radius: 6px;
+      padding: 8px 10px 8px 30px;
+      transition: background 0.2s;
+
+      &::before {
+        content: '▸';
+        position: absolute;
+        left: 10px;
+        top: 8px;
+        color: #7c2522;
+        font-weight: 700;
+      }
+
+      .video-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        margin-left: 8px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #fff;
+        background: #7c2522;
+        padding: 2px 8px;
+        border-radius: 20px;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        i { font-size: 11px; }
+      }
+
+      &:has(.video-badge) {
+        cursor: pointer;
+
+        &:hover {
+          background: #fdf3f2;
+
+          .video-badge {
+            background: #a83030;
+          }
+        }
+      }
+
+      &:not(:has(.video-badge)) {
+        cursor: default;
+      }
+
+      &.active {
+        background: #fdf3f2;
+        color: #7c2522;
+        font-weight: 600;
+
+        &::before {
+          content: '▶';
+        }
+
+        .video-badge {
+          background: #333;
+        }
+      }
+    }
+  }
+
+  .pilar-quote {
+    background: #fdf3f2;
+    border-left: 4px solid #7c2522;
+    padding: 14px 18px;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: #7c2522;
+    font-weight: 600;
+  }
+}
+
+.pilar-modal-footer {
+  background: #f8f8f8;
+  border-top: 1px solid #eee;
+  padding: 12px 28px;
+  justify-content: flex-start;
+
+  small {
+    color: #999;
+    font-size: 12px;
+  }
 }

@@ -11,6 +11,27 @@
   background-color: #7c2522 !important;
 }
 
+// Íconos sociales junto al botón WhatsApp
+.header-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffffff !important;
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
+
+  &:hover { opacity: 0.82; }
+}
+
+// Sombra sutil en el menú para que el texto no se pierda sobre fondos claros
+.po-main-menu ul li a {
+  text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+}
+
 // Logo mobile header y sidebar
 .mobile-logo img,
 .logo-m img {

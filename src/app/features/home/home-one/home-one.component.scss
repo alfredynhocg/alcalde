@@ -1,3 +1,19 @@
+// Efecto pulse en la imagen hero al hacer hover
+.hero-pulse-img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-pulse-img:hover {
+  animation: hero-pulse 0.6s ease-in-out 1;
+}
+
+@keyframes hero-pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
 // Styles loaded globally
 
 /* Testimonial synced slider — flexbox layout overrides float */
@@ -57,6 +73,13 @@
 }
 #candidatoTabs .nav-link:hover {
   color: var(--brand-red) !important;
+}
+
+/* En mobile el degradado cubre todo el ancho con oscuro */
+@media (max-width: 991px) {
+  .po-banner-area .banner-overlay {
+    background: rgba(0,0,0,0.55) !important;
+  }
 }
 
 @media (max-width: 991px) {

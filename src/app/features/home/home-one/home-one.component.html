@@ -1,6 +1,8 @@
 <!-- banner section start -->
 <section class="po-banner-area relative" style="background-image: url(assets/img/banner/po-banner1.1.jpg);">
-  <div class="container">
+  <!-- degradado: oscuro izquierda → transparente derecha -->
+  <div class="banner-overlay" style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.55) 40%,rgba(0,0,0,0.10) 68%,rgba(0,0,0,0.0) 85%);z-index:0;pointer-events:none;"></div>
+  <div class="container" style="position:relative;z-index:1;">
     <div class="row">
       <div class="col-xl-7">
         <div class="po-banner-content relative z-1 pt-240 pb-135">
@@ -10,7 +12,7 @@
             DAMASO <br>
             <span style="color:var(--brand-gold);">NINAJA HUANCA</span>
           </h1>
-          <p style="font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.5);display:inline-block;padding:9px 20px;margin-top:28px;margin-bottom:20px;">Candidato a Alcalde 2026–2031</p>
+          <p style="font-size:12px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.5);display:inline-block;padding:9px 20px;margin-top:28px;margin-bottom:20px;color:#fff;">Candidato a Alcalde 2026–2031</p>
           <p style="font-style:italic;font-size:17px;color:rgba(255,255,255,0.9);border-left:3px solid var(--brand-gold);padding-left:14px;margin-bottom:32px;line-height:1.5;">"Experiencia para avanzar, capacidad para <br>trabajar y compromiso firme para transformar."</p>
         </div>
       </div>
@@ -183,7 +185,7 @@
   <div class="container">
     <div class="po-section-title text-center mb-60" data-aos="fade-up" data-aos-duration="800">
       <h4 class="sec-subtitle-1 text-white text-16 leading-16">Plan de Gobierno 2026–2031</h4>
-      <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16" style="color:#fff !important;">12 Pilares para el Desarrollo de Achocalla</h2>
+      <h2 class="sec-title text-40 font-bold leading-52 pt-16 pb-16" style="color:#fff !important;">12 Propuestas para mejorar Achocalla</h2>
       <p style="color:rgba(255,255,255,.85);">Haz clic en <strong>Ver más</strong> para conocer el detalle de cada pilar.</p>
     </div>
   </div>
@@ -485,114 +487,373 @@
   </div>
 </section>
 
-<!-- ── Modales de detalle ── -->
-<div class="modal fade" id="pilar1" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">01 · Salud Integral y Preventiva</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Salud cercana, preventiva y con dignidad.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión de Hospital de Segundo Nivel con especialidades.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión de Hospital Materno Infantil.</li><li style="padding:8px 0;">• Fortalecimiento y equipamiento de centros de salud con laboratorio y ecografía.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"La salud llega donde está la gente"</p>
-  </div>
-</div></div></div>
+<!-- ── Modales de detalle (12 pilares) ── -->
 
-<div class="modal fade" id="pilar2" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">02 · Educación, Tecnología y Formación</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Educación con igualdad de oportunidades.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Construcción y mantenimiento de todas las unidades educativas.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Acceso a tecnología y bibliotecas digitales.</li><li style="padding:8px 0;">• Construcción, apertura y funcionamiento de Institutos Tecnológicos Municipal.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Formando el futuro de Achocalla."</p>
+<!-- Modal Pilar 1 -->
+<div class="modal fade" id="pilar1" tabindex="-1" aria-labelledby="pilar1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 01</span>
+          <h5 class="modal-title" id="pilar1Label">Salud Integral y Preventiva</h5>
+          <p class="pilar-lema">Salud cercana, preventiva y con dignidad.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl">
+            <video controls [src]="activeVideoUrl" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo(1, hospitalVideoUrl)" [class.active]="activeItem === 1">
+                Gestión de Hospital de Segundo Nivel con especialidades.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li>Gestión de Hospital Materno Infantil.</li>
+              <li (click)="selectVideo(3, centroSaludVideoUrl)" [class.active]="activeItem === 3">
+                Fortalecimiento y equipamiento de centros de salud con laboratorio y ecografía.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"La salud llega donde está la gente"</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar3" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">03 · Desarrollo Productivo y Empleo</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Generar empleo local.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Apoyo técnico y maquinaria para productores agrícolas.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Fortalecimiento a las asociaciones de productores en carpas solares, lecheros y ganaderas.</li><li style="padding:8px 0;">• Planta de transformación agroindustrial (lácteos y hortalizas).</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Fortaleciendo según realidad económica del municipio."</p>
+<!-- Modal Pilar 2 -->
+<div class="modal fade" id="pilar2" tabindex="-1" aria-labelledby="pilar2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 02</span>
+          <h5 class="modal-title" id="pilar2Label">Educación, Tecnología y Formación</h5>
+          <p class="pilar-lema">Educación con igualdad de oportunidades.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl2">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl2">
+            <video controls [src]="activeVideoUrl2" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo2(1, normalVideoUrl)" [class.active]="activeItem2 === 1">
+                Construcción y mantenimiento de todas las unidades educativas.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li (click)="selectVideo2(2, guarderiaVideoUrl)" [class.active]="activeItem2 === 2">
+                Acceso a tecnología y bibliotecas digitales.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li (click)="selectVideo2(3, educacionVideoUrl)" [class.active]="activeItem2 === 3">
+                Construcción, apertura y funcionamiento de Institutos Tecnológicos Municipales.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"Formando el futuro de Achocalla."</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar4" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">04 · Cobertura de Servicios Básicos</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Servicios básicos para vivir con dignidad.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Ampliación y construcción de redes de agua potable.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Ampliación y construcción de redes de alcantarillado sanitario.</li><li style="padding:8px 0;">• Gestión de nuevos sistemas de captación sostenible y reservorios de agua.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Servicios básicos es un derecho, no un favor."</p>
+<!-- Modal Pilar 3 -->
+<div class="modal fade" id="pilar3" tabindex="-1" aria-labelledby="pilar3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 03</span>
+          <h5 class="modal-title" id="pilar3Label">Desarrollo Productivo y Empleo</h5>
+          <p class="pilar-lema">Generar empleo local.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Apoyo técnico y maquinaria para productores agrícolas.</li>
+          <li>Fortalecimiento a las asociaciones de productores en carpas solares, lecheros y ganaderas.</li>
+          <li>Planta de transformación agroindustrial (lácteos y hortalizas).</li>
+        </ul>
+        <blockquote class="pilar-quote">"Fortaleciendo según realidad económica del municipio."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar5" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">05 · Desarrollo Vial e Integración</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Achocalla es puerta de integración con La Paz y El Alto.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Apertura, mantenimiento y mejoramiento de caminos.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Asfaltado de vías estructurales.</li><li style="padding:8px 0;">• Adoquinado de vías principales.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Caminos que unen y generan desarrollo."</p>
+<!-- Modal Pilar 4 -->
+<div class="modal fade" id="pilar4" tabindex="-1" aria-labelledby="pilar4Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 04</span>
+          <h5 class="modal-title" id="pilar4Label">Cobertura de Servicios Básicos</h5>
+          <p class="pilar-lema">Servicios básicos para vivir con dignidad.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Ampliación y construcción de redes de agua potable.</li>
+          <li>Ampliación y construcción de redes de alcantarillado sanitario.</li>
+          <li>Gestión de nuevos sistemas de captación sostenible y reservorios de agua.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Servicios básicos es un derecho, no un favor."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar6" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">06 · Medio Ambiente</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Las lagunas son patrimonio natural y turístico.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Plan integral de recuperación de lagunas y áreas verdes.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Plan municipal "Achocalla sin contaminación".</li><li style="padding:8px 0;">• Control de loteamientos en áreas ecológicas.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Convertir a Achocalla en municipio ecológico modelo del departamento."</p>
+<!-- Modal Pilar 5 -->
+<div class="modal fade" id="pilar5" tabindex="-1" aria-labelledby="pilar5Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 05</span>
+          <h5 class="modal-title" id="pilar5Label">Desarrollo Vial e Integración</h5>
+          <p class="pilar-lema">Achocalla es puerta de integración con La Paz y El Alto.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Apertura, mantenimiento y mejoramiento de caminos.</li>
+          <li>Asfaltado de vías estructurales.</li>
+          <li>Adoquinado de vías principales.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Caminos que unen y generan desarrollo."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar7" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">07 · Turismo</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Turismo comunitario, ecológico y productivo.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Fomento al turismo en las lagunas y rutas ecológicas.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Promoción gastronómica y artesanal.</li><li style="padding:8px 0;">• Infraestructura en áreas turísticas.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Generar empleo turístico sostenible."</p>
+<!-- Modal Pilar 6 -->
+<div class="modal fade" id="pilar6" tabindex="-1" aria-labelledby="pilar6Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 06</span>
+          <h5 class="modal-title" id="pilar6Label">Medio Ambiente</h5>
+          <p class="pilar-lema">Las lagunas son patrimonio natural y turístico.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Plan integral de recuperación de lagunas y áreas verdes.</li>
+          <li>Plan municipal "Achocalla sin contaminación".</li>
+          <li>Control de loteamientos en áreas ecológicas.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Convertir a Achocalla en municipio ecológico modelo del departamento."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar8" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">08 · Deporte</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Prevención social a través del deporte.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Construcción del Polideportivo Municipal.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión para la construcción del Stadium Municipal.</li><li style="padding:8px 0;">• Construcción de campos deportivos en distritos y comunidades.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Más deporte, menos problemas sociales."</p>
+<!-- Modal Pilar 7 -->
+<div class="modal fade" id="pilar7" tabindex="-1" aria-labelledby="pilar7Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 07</span>
+          <h5 class="modal-title" id="pilar7Label">Turismo</h5>
+          <p class="pilar-lema">Turismo comunitario, ecológico y productivo.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Fomento al turismo en las lagunas y rutas ecológicas.</li>
+          <li>Promoción gastronómica y artesanal.</li>
+          <li>Infraestructura en áreas turísticas.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Generar empleo turístico sostenible."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar9" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">09 · Desarrollo Social</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Gobierno cercano, humano y transparente.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Guarderías municipales.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Centro integral para Adultos Mayores.</li><li style="padding:8px 0;">• Bono Municipal Anual para Adultos Mayores.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Inclusión, dignidad y oportunidad para todos."</p>
+<!-- Modal Pilar 8 -->
+<div class="modal fade" id="pilar8" tabindex="-1" aria-labelledby="pilar8Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 08</span>
+          <h5 class="modal-title" id="pilar8Label">Deporte</h5>
+          <p class="pilar-lema">Prevención social a través del deporte.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Construcción del Polideportivo Municipal.</li>
+          <li>Gestión para la construcción del Stadium Municipal.</li>
+          <li>Construcción de campos deportivos en distritos y comunidades.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Más deporte, menos problemas sociales."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar10" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">10 · Seguridad Ciudadana</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Protección real para nuestras familias.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión y construcción de una EPI (Estación Policial Integral).</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión para la construcción de infraestructura del edificio judicial.</li><li style="padding:8px 0;">• Más efectivos policiales y módulos de seguridad.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"La seguridad no se improvisa, se planifica."</p>
+<!-- Modal Pilar 9 -->
+<div class="modal fade" id="pilar9" tabindex="-1" aria-labelledby="pilar9Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 09</span>
+          <h5 class="modal-title" id="pilar9Label">Desarrollo Social</h5>
+          <p class="pilar-lema">Gobierno cercano, humano y transparente.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Guarderías municipales.</li>
+          <li>Centro integral para Adultos Mayores.</li>
+          <li>Bono Municipal Anual para Adultos Mayores.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Inclusión, dignidad y oportunidad para todos."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar11" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">11 · Ordenamiento Territorial y Límites Municipales</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">Más territorio claro, más desarrollo seguro.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Actualización cartográfica y georreferenciación del territorio.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Actualización del catastro municipal.</li><li style="padding:8px 0;">• Delimitación y registro de distritos y comunidades.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Más territorio claro, más desarrollo seguro."</p>
+<!-- Modal Pilar 10 -->
+<div class="modal fade" id="pilar10" tabindex="-1" aria-labelledby="pilar10Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 10</span>
+          <h5 class="modal-title" id="pilar10Label">Seguridad Ciudadana</h5>
+          <p class="pilar-lema">Protección real para nuestras familias.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <div class="pilar-content-row" [class.has-video]="activeVideoUrl10">
+          <div class="pilar-video-col" *ngIf="activeVideoUrl10">
+            <video controls [src]="activeVideoUrl10" type="video/mp4" autoplay></video>
+          </div>
+          <div class="pilar-text-col">
+            <ul class="pilar-list">
+              <li (click)="selectVideo10(1, policialVideoUrl)" [class.active]="activeItem10 === 1">
+                Gestión y construcción de una EPI (Estación Policial Integral).
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li>Gestión para la construcción de infraestructura del edificio judicial.</li>
+              <li (click)="selectVideo10(3, seguridadVideoUrl)" [class.active]="activeItem10 === 3">
+                Más efectivos policiales y módulos de seguridad.
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+            </ul>
+            <blockquote class="pilar-quote">"La seguridad no se improvisa, se planifica."</blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
 
-<div class="modal fade" id="pilar12" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
-  <div class="modal-header" style="background:var(--brand-red);"><h5 class="modal-title text-white font-bold">12 · Gobierno Transparente, Digital y Participativo</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
-  <div class="modal-body p-32">
-    <p class="font-bold mb-20" style="color:var(--brand-red);">La confianza se construye con transparencia.</p>
-    <ul style="list-style:none;padding:0;"><li style="padding:8px 0;border-bottom:1px solid #eee;">• Desconcentración de las sub alcaldías municipales.</li><li style="padding:8px 0;border-bottom:1px solid #eee;">• Gestión pública íntegra y transparente.</li><li style="padding:8px 0;">• Portal de transparencia municipal.</li></ul>
-    <p class="mt-20" style="font-style:italic;border-left:3px solid var(--brand-gold);padding-left:12px;">"Gestión transparente, confianza garantizada."</p>
+<!-- Modal Pilar 11 -->
+<div class="modal fade" id="pilar11" tabindex="-1" aria-labelledby="pilar11Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 11</span>
+          <h5 class="modal-title" id="pilar11Label">Ordenamiento Territorial y Límites Municipales</h5>
+          <p class="pilar-lema">Más territorio claro, más desarrollo seguro.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Actualización cartográfica y georreferenciación del territorio.</li>
+          <li>Actualización del catastro municipal.</li>
+          <li>Delimitación y registro de distritos y comunidades.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Más territorio claro, más desarrollo seguro."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
   </div>
-</div></div></div>
+</div>
+
+<!-- Modal Pilar 12 -->
+<div class="modal fade" id="pilar12" tabindex="-1" aria-labelledby="pilar12Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content pilar-modal">
+      <div class="modal-header pilar-modal-header">
+        <div>
+          <span class="pilar-num">Pilar 12</span>
+          <h5 class="modal-title" id="pilar12Label">Gobierno Transparente y Digital</h5>
+          <p class="pilar-lema">La confianza se construye con transparencia.</p>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body pilar-modal-body">
+        <ul class="pilar-list">
+          <li>Desconcentración de las sub alcaldías municipales.</li>
+          <li>Gestión pública íntegra y transparente.</li>
+          <li>Portal de transparencia municipal.</li>
+        </ul>
+        <blockquote class="pilar-quote">"Gestión transparente, confianza garantizada."</blockquote>
+      </div>
+      <div class="modal-footer pilar-modal-footer">
+        <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- plan de gobierno section end -->
 
 <!-- events section start -->
@@ -669,7 +930,7 @@
             <h3 class="event-date-title text-18 leading-18 pb-16 font-semibold">Damaso Alcalde</h3>
             <p>Candidato a Alcalde 2026–2031</p>
             <h3 class="po-camp-title font-bold text-20 leading-28 pt-16 pb-16"><a href="https://www.facebook.com/share/r/18MH6dRNpJ/" target="_blank" rel="noopener">Estuvimos en la Asociación de Agua Potable - Alianza Pacajes  #Achocalla
- #DNH #cemento #Alianzaunidosporlospueblos #destacar</a></h3>
+                  #DNH #cemento #Alianzaunidosporlospueblos #destacar</a></h3>
             <p>Candidato a Alcalde 2026–2031</p>
             <div class="event-locations">
               <a href="https://www.facebook.com/share/r/18MH6dRNpJ/" target="_blank" rel="noopener" class="font-bold">Ver video <span><i class="fa-solid fa-arrow-right"></i></span></a>
