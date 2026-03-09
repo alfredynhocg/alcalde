@@ -17,6 +17,7 @@ export class ServiceListComponent implements AfterViewInit {
   educacionVideoUrl: SafeUrl;
   normalVideoUrl: SafeUrl;
   guarderiaVideoUrl: SafeUrl;
+  institutoVideoUrl: SafeUrl;
   policialVideoUrl: SafeUrl;
   seguridadVideoUrl: SafeUrl;
 
@@ -35,6 +36,7 @@ export class ServiceListComponent implements AfterViewInit {
     this.educacionVideoUrl   = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/educacion.mp4');
     this.normalVideoUrl      = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/normal.mp4');
     this.guarderiaVideoUrl   = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/guarderia.mp4');
+    this.institutoVideoUrl   = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/instituto.mp4');
     this.policialVideoUrl    = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/policial.mp4');
     this.seguridadVideoUrl   = this.sanitizer.bypassSecurityTrustUrl('assets/img/videos/seguridad.mp4');
   }
@@ -66,6 +68,27 @@ export class ServiceListComponent implements AfterViewInit {
     } else {
       this.activeItem2 = item;
       this.activeVideoUrl2 = url;
+    }
+  }
+
+  onVideoEnded(): void {
+    const isMobile = window.innerWidth <= 768 || navigator.maxTouchPoints > 0;
+    if (isMobile && document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
+  }
+
+  enterFullscreen(event: Event): void {
+    const video = event.target as HTMLVideoElement & {
+      webkitRequestFullscreen?: () => void;
+      webkitEnterFullscreen?: () => void;
+    };
+    if (video.requestFullscreen) {
+      video.requestFullscreen().catch(() => {});
+    } else if (video.webkitRequestFullscreen) {
+      video.webkitRequestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+      video.webkitEnterFullscreen();
     }
   }
 

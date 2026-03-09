@@ -202,7 +202,7 @@
       <div class="modal-body pilar-modal-body">
         <div class="pilar-content-row" [class.has-video]="activeVideoUrl">
           <div class="pilar-video-col" *ngIf="activeVideoUrl">
-            <video controls [src]="activeVideoUrl" type="video/mp4" autoplay></video>
+            <video controls [src]="activeVideoUrl" type="video/mp4" autoplay (canplay)="enterFullscreen($event)" (ended)="onVideoEnded()"></video>
           </div>
           <div class="pilar-text-col">
             <ul class="pilar-list">
@@ -215,6 +215,10 @@
                 Fortalecimiento y equipamiento de centros de salud con laboratorio y ecografía.
                 <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
               </li>
+              <li>Brigada médica móvil para comunidades alejadas.</li>
+              <li>Programa "Salud en tu Comunidad" (control prenatal, adulto mayor, vacunación).</li>
+              <li>Programa de prevención y salud familiar.</li>
+              <li>Farmacia municipal con medicamentos esenciales a bajo costo.</li>
             </ul>
             <blockquote class="pilar-quote">"La salud llega donde está la gente"</blockquote>
           </div>
@@ -242,7 +246,7 @@
       <div class="modal-body pilar-modal-body">
         <div class="pilar-content-row" [class.has-video]="activeVideoUrl2">
           <div class="pilar-video-col" *ngIf="activeVideoUrl2">
-            <video controls [src]="activeVideoUrl2" type="video/mp4" autoplay></video>
+            <video controls [src]="activeVideoUrl2" type="video/mp4" autoplay (canplay)="enterFullscreen($event)" (ended)="onVideoEnded()"></video>
           </div>
           <div class="pilar-text-col">
             <ul class="pilar-list">
@@ -258,6 +262,12 @@
                 Construcción, apertura y funcionamiento de Institutos Tecnológicos Municipales.
                 <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
               </li>
+              <li (click)="selectVideo2(4, institutoVideoUrl)" [class.active]="activeItem2 === 4">
+                Construcción, apertura y funcionamiento de Escuela de Formación de Maestros (ESFM).
+                <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
+              </li>
+              <li>Becas municipales y apoyo a estudiantes destacados.</li>
+              <li>Bono Municipal al Nivel Inicial.</li>
             </ul>
             <blockquote class="pilar-quote">"Formando el futuro de Achocalla."</blockquote>
           </div>
@@ -285,8 +295,12 @@
       <div class="modal-body pilar-modal-body">
         <ul class="pilar-list">
           <li>Apoyo técnico y maquinaria para productores agrícolas.</li>
-          <li>Fortalecimiento a las asociaciones de productores en carpas solares, lecheros y ganaderas.</li>
+          <li>Fortalecimiento a las asociaciones de productores en carpas solares, lecheros y ganaderos.</li>
           <li>Planta de transformación agroindustrial (lácteos y hortalizas).</li>
+          <li>Mercados productivos permanentes.</li>
+          <li>Fondo rotatorio para emprendedores.</li>
+          <li>Capacitación en comercialización digital.</li>
+          <li>Creación de empresas Municipales.</li>
         </ul>
         <blockquote class="pilar-quote">"Fortaleciendo según realidad económica del municipio."</blockquote>
       </div>
@@ -314,6 +328,12 @@
           <li>Ampliación y construcción de redes de agua potable.</li>
           <li>Ampliación y construcción de redes de alcantarillado sanitario.</li>
           <li>Gestión de nuevos sistemas de captación sostenible y reservorios de agua.</li>
+          <li>Perforación de pozos profundos donde sea técnicamente viable.</li>
+          <li>Instalación de tanques elevados y sistemas de distribución sectorizada para agua potable y riego.</li>
+          <li>Implementación de sistemas de riego tecnificado y almacenamiento de agua para fortalecer la producción agrícola.</li>
+          <li>Gestión de planta de tratamiento de aguas residuales.</li>
+          <li>Ampliación de redes de gas domiciliario.</li>
+          <li>Alumbrado público LED en zonas urbanas y rurales.</li>
         </ul>
         <blockquote class="pilar-quote">"Servicios básicos es un derecho, no un favor."</blockquote>
       </div>
@@ -341,6 +361,10 @@
           <li>Apertura, mantenimiento y mejoramiento de caminos.</li>
           <li>Asfaltado de vías estructurales.</li>
           <li>Adoquinado de vías principales.</li>
+          <li>Construcción de puentes estratégicos.</li>
+          <li>Señalización y seguridad vial.</li>
+          <li>Gestión de transporte ordenado y rutas legales.</li>
+          <li>Integración vial metropolitana planificada.</li>
         </ul>
         <blockquote class="pilar-quote">"Caminos que unen y generan desarrollo."</blockquote>
       </div>
@@ -368,6 +392,11 @@
           <li>Plan integral de recuperación de lagunas y áreas verdes.</li>
           <li>Plan municipal "Achocalla sin contaminación".</li>
           <li>Control de loteamientos en áreas ecológicas.</li>
+          <li>Gestión para la construcción de Planta de tratamiento de residuos sólidos.</li>
+          <li>Programa masivo de reforestación.</li>
+          <li>Educación ambiental en colegios.</li>
+          <li>Sistema de prevención de riesgos (inundaciones y deslizamientos).</li>
+          <li>Adquisición de camiones recolectores de basura.</li>
         </ul>
         <blockquote class="pilar-quote">"Convertir a Achocalla en municipio ecológico modelo del departamento."</blockquote>
       </div>
@@ -395,6 +424,8 @@
           <li>Fomento al turismo en las lagunas y rutas ecológicas.</li>
           <li>Promoción gastronómica y artesanal.</li>
           <li>Infraestructura en áreas turísticas.</li>
+          <li>Festivales anuales turísticos y productivos.</li>
+          <li>Capacitación en atención al visitante.</li>
         </ul>
         <blockquote class="pilar-quote">"Generar empleo turístico sostenible."</blockquote>
       </div>
@@ -422,6 +453,8 @@
           <li>Construcción del Polideportivo Municipal.</li>
           <li>Gestión para la construcción del Stadium Municipal.</li>
           <li>Construcción de campos deportivos en distritos y comunidades.</li>
+          <li>Apoyo a talentos deportistas.</li>
+          <li>Participación con equipo municipal en la Asociación de Futbol La Paz.</li>
         </ul>
         <blockquote class="pilar-quote">"Más deporte, menos problemas sociales."</blockquote>
       </div>
@@ -449,6 +482,11 @@
           <li>Guarderías municipales.</li>
           <li>Centro integral para Adultos Mayores.</li>
           <li>Bono Municipal Anual para Adultos Mayores.</li>
+          <li>Centro de acogida para Personas con Capacidades Diferentes.</li>
+          <li>Bono Municipal Anual para las personas con Capacidades Diferentes.</li>
+          <li>Plan Municipal de Apoyo al Microemprendimiento para personas con capacidades diferentes y jóvenes.</li>
+          <li>Programa de salud mental y prevención de violencia familiar.</li>
+          <li>Red de Apoyo Social "Achocalla con Corazón".</li>
         </ul>
         <blockquote class="pilar-quote">"Inclusión, dignidad y oportunidad para todos."</blockquote>
       </div>
@@ -474,7 +512,7 @@
       <div class="modal-body pilar-modal-body">
         <div class="pilar-content-row" [class.has-video]="activeVideoUrl10">
           <div class="pilar-video-col" *ngIf="activeVideoUrl10">
-            <video controls [src]="activeVideoUrl10" type="video/mp4" autoplay></video>
+            <video controls [src]="activeVideoUrl10" type="video/mp4" autoplay (canplay)="enterFullscreen($event)" (ended)="onVideoEnded()"></video>
           </div>
           <div class="pilar-text-col">
             <ul class="pilar-list">
@@ -487,6 +525,10 @@
                 Más efectivos policiales y módulos de seguridad.
                 <span class="video-badge"><i class="fa-solid fa-circle-play"></i> Ver video</span>
               </li>
+              <li>Sistema de cámaras de vigilancia.</li>
+              <li>Implementación de botón de pánico vecinal.</li>
+              <li>Centro Municipal de Monitoreo y aplicación móvil de denuncias.</li>
+              <li>Patrullaje especial en horarios escolares.</li>
             </ul>
             <blockquote class="pilar-quote">"La seguridad no se improvisa, se planifica."</blockquote>
           </div>
@@ -506,8 +548,8 @@
       <div class="modal-header pilar-modal-header">
         <div>
           <span class="pilar-num">Pilar 11</span>
-          <h5 class="modal-title" id="pilar11Label">Ordenamiento Territorial y Límites Municipales</h5>
-          <p class="pilar-lema">Más territorio claro, más desarrollo seguro.</p>
+          <h5 class="modal-title" id="pilar11Label">Reordenamiento Territorial y Límites Municipales</h5>
+          <p class="pilar-lema">Territorio claro, futuro garantizado.</p>
         </div>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
@@ -516,8 +558,14 @@
           <li>Actualización cartográfica y georreferenciación del territorio.</li>
           <li>Actualización del catastro municipal.</li>
           <li>Delimitación y registro de distritos y comunidades.</li>
+          <li>Uso de suelo y cambio de uso de suelo.</li>
+          <li>Planificación urbana con límites consolidados.</li>
+          <li>Programa municipal de regularización de urbanizaciones.</li>
+          <li>Garantizar seguridad jurídica de los terrenos.</li>
+          <li>Comisión Técnica y Jurídica para la defensa permanente de los límites del municipio.</li>
+          <li>Continuidad a los procesos jurídicos de límites del municipio.</li>
         </ul>
-        <blockquote class="pilar-quote">"Más territorio claro, más desarrollo seguro."</blockquote>
+        <blockquote class="pilar-quote">"Territorio claro, futuro garantizado."</blockquote>
       </div>
       <div class="modal-footer pilar-modal-footer">
         <small>Plan de Gobierno · Ing. Damaso Ninaja · Achocalla 2026–2031</small>
@@ -540,9 +588,13 @@
       </div>
       <div class="modal-body pilar-modal-body">
         <ul class="pilar-list">
-          <li>Desconcentración de las sub alcaldías municipales.</li>
+          <li>Desconcentración de las Sub Alcaldías Municipales.</li>
           <li>Gestión pública íntegra y transparente.</li>
           <li>Portal de transparencia municipal.</li>
+          <li>Digitalización progresiva de trámites.</li>
+          <li>Plataforma virtual para seguimiento de trámites.</li>
+          <li>Aplicación móvil municipal para reclamos y reportes vecinales.</li>
+          <li>Participación y planificación participativa.</li>
         </ul>
         <blockquote class="pilar-quote">"Gestión transparente, confianza garantizada."</blockquote>
       </div>
