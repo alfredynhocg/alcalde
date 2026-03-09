@@ -74,6 +74,9 @@ export class ServiceListComponent implements AfterViewInit {
 
     const pilar1Modal = document.getElementById('pilar1');
     if (pilar1Modal) {
+      pilar1Modal.addEventListener('hide.bs.modal', () => {
+        pilar1Modal.querySelector('video')?.pause();
+      });
       pilar1Modal.addEventListener('hidden.bs.modal', () => {
         this.activeItem = null;
         this.activeVideoUrl = null;
@@ -82,6 +85,9 @@ export class ServiceListComponent implements AfterViewInit {
 
     const pilar2Modal = document.getElementById('pilar2');
     if (pilar2Modal) {
+      pilar2Modal.addEventListener('hide.bs.modal', () => {
+        pilar2Modal.querySelector('video')?.pause();
+      });
       pilar2Modal.addEventListener('hidden.bs.modal', () => {
         this.activeItem2 = null;
         this.activeVideoUrl2 = null;
@@ -90,6 +96,9 @@ export class ServiceListComponent implements AfterViewInit {
 
     const pilar10Modal = document.getElementById('pilar10');
     if (pilar10Modal) {
+      pilar10Modal.addEventListener('hide.bs.modal', () => {
+        pilar10Modal.querySelector('video')?.pause();
+      });
       pilar10Modal.addEventListener('hidden.bs.modal', () => {
         this.activeItem10 = null;
         this.activeVideoUrl10 = null;
