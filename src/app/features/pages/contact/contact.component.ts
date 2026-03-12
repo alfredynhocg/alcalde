@@ -30,7 +30,7 @@ export class ContactComponent {
     if (this.form.redes)     roles.push('Redes Sociales');
 
     const msg = `✊ ¡Quiero ser Voluntario!\n\nNombre: ${this.form.nombre}\nCelular: ${this.form.celular}\nZona: ${this.form.zona}\nCómo ayudo: ${roles.join(', ') || 'Por definir'}`;
-    window.open(`https://wa.me/59179113146?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/59161000058?text=${encodeURIComponent(msg)}`, '_blank');
     this.submitted = true;
   }
 
